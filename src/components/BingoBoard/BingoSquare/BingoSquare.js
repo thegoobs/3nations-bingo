@@ -1,6 +1,21 @@
-import React from 'react';
+import { useState }from 'react';
 import styles from './BingoSquare.module.scss';
 
-export const BingoSquare = () => (
-    <div className={styles.bingoSquare}>Placeholder for BingoSquare</div>
-);
+export const BingoSquare = ({label = false, freeSpace = false, children}) => {
+    const [selected, setSelected] = useState(false);
+    const classNames = [
+        styles.bingoSquare,
+        label && styles.label,
+        freeSpace && styles.freeSpace,
+        selected && styles.selected
+    ].filter(Boolean).join(' ');
+    const value = `${children}`.toUpperCase();
+
+    return (<div className={classNames} onClick={handleClick}>{value}</div>);
+
+    function handleClick() {
+        if (!label) {
+            setSelected(!selected);
+        }
+    }
+};

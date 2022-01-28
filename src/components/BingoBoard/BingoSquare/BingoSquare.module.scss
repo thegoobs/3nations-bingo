@@ -1,3 +1,38 @@
 .bingoSquare {
-    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    transition: background-color 0.075s ease-in;
+    user-select: none;
+    
+    &::before {
+        content: "";
+        padding-bottom: 100%;
+        display: block;
+    }
+}
+@function boxShadow($min, $max, $color) {
+    $shadow: 0px 0px $color;
+    @for $i from $min through $max {
+        $shadow: #{$shadow}, #{$i}px #{$i + 1}px $color;
+    } 
+
+    @return $shadow;
+}
+
+.label {
+    background-color: inherit;
+    color: white;
+    text-shadow: boxShadow(1, 4, #fba900);
+}
+
+.freeSpace {
+    font-size: 2rem;
+    color: #d83a28;
+}
+
+.selected {
+    background-color: #fba900;
+    color: #000000;
 }
