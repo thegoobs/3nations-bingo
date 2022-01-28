@@ -1,9 +1,14 @@
 import styles from './App.module.scss';
+import { Header, Footer, BingoBoard, Body } from './components';
 
 function App() {
   return (
     <div className={styles.App}>
-      3 Nations Bingo
+      <Header />
+      <Body>
+        <BingoBoard />
+      </Body>
+      <Footer />
     </div>
   );
 }
