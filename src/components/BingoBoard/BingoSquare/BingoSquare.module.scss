@@ -1,12 +1,11 @@
 .bingoSquare {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: white;
     transition: background-color 0.075s ease-in;
     user-select: none;
     font-size: max(5vw, 2rem);
     font-weight: bold;
+    box-sizing: border-box;
+    position: relative;
     
     &::before {
         content: "";
@@ -14,6 +13,7 @@
         display: block;
     }
 }
+
 @function boxShadow($min, $max, $color) {
     $shadow: 0px 0px $color;
     @for $i from $min through $max {
@@ -27,7 +27,7 @@
     background-color: inherit;
     color: white;
     text-shadow: boxShadow(1, 4, #fba900);
-    font-size: max(5vw, 3rem);
+    font-size: 10vw;
 }
 
 .freeSpace {
@@ -38,4 +38,15 @@
 .selected {
     background-color: #fba900;
     color: #000000;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

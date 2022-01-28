@@ -3,7 +3,7 @@ import { BingoSquare } from './BingoSquare/BingoSquare';
 
 
 const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
-const board = [getBingoRow(1, 15), getBingoRow(16, 30), getBingoRow(31, 45, true), getBingoRow(46, 60), getBingoRow(61, 75)];
+const board = [getBingoRow(1, 9), getBingoRow(16, 30), getBingoRow(31, 45, true), getBingoRow(46, 60), getBingoRow(61, 75)];
 
 export const BingoBoard = () => (
     <div className={styles.bingoBoard}>

@@ -9,9 +9,12 @@ export const BingoSquare = ({label = false, freeSpace = false, children}) => {
         freeSpace && styles.freeSpace,
         selected && styles.selected
     ].filter(Boolean).join(' ');
-    const value = `${children}`.toUpperCase();
+    let value = `${children}`.toUpperCase();
 
-    return (<div className={classNames} onClick={handleClick}>{value}</div>);
+    return (
+    <div className={classNames} onClick={handleClick}>
+        <span className={styles.content}>{value}</span>
+    </div>);
 
     function handleClick() {
         if (!label) {
