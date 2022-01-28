@@ -5,6 +5,8 @@
     background-color: white;
     transition: background-color 0.075s ease-in;
     user-select: none;
+    font-size: max(5vw, 2rem);
+    font-weight: bold;
     
     &::before {
         content: "";
@@ -25,10 +27,11 @@
     background-color: inherit;
     color: white;
     text-shadow: boxShadow(1, 4, #fba900);
+    font-size: max(5vw, 3rem);
 }
 
 .freeSpace {
-    font-size: 2rem;
+    font-size: 3vw;
     color: #d83a28;
 }
 
