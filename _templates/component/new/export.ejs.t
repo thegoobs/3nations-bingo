@@ -1,7 +1,7 @@
 ---
-inject: <%= path === null %>
+inject: true
 to: src/components/index.js
-append: <%= path === null %>
-skip_if: <%= Name %>
+append: true
+skip_if: <%= (path && 'export') || Name %>
 ---
 export * from './<%= Name %>/<%= Name %>';
