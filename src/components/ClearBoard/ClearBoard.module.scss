@@ -1,0 +1,11 @@
+@import '../../sass/box-shadow.scss';
+
+.clearBoard {
+    margin: 24px;
+    border: none;
+    padding: 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #fba900;
+    box-shadow: boxShadow(0, 5, black);
+}

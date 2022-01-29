@@ -1,0 +1,8 @@
+@function boxShadow($min, $max, $color) {
+    $shadow: 0px 0px $color;
+    @for $i from $min through $max {
+        $shadow: #{$shadow}, #{$i}px #{$i + 1}px $color;
+    } 
+
+    @return $shadow;
+}

@@ -2,12 +2,19 @@
     background-color: #000000;
     width: 100%;
     max-width: 800px;
-    padding: min(36px, 3vw);
-    
+    padding: 0 min(36px, 3vw);
+
     & hr {
-        margin-bottom: min(36px, 3vw);
+        margin: min(36px, 3vw) 0;
         border: 1px solid #FFFFFF;
     }
+}
+.first {
+    padding-top: min(36px, 3vw);
+}
+
+.last {
+    padding-bottom: min(36px, 3vw);
 }
 
 .bingoLabels {
