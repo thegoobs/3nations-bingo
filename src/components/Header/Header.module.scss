@@ -2,12 +2,12 @@
     background-color: #000000;
     border-bottom: 6px solid #fba900;
     color: #FFFFFF;
-    margin-bottom: 3rem;
+    margin-bottom: 4.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;
-    height: 148px;
+    height: 100px;
 
     .left, .right {
         flex: 1;
@@ -15,12 +15,4 @@
         display: flex;
         justify-content: center;
     }
-
-    // .right {
-    //     justify-content: right;
-    // }
-
-    // .left {
-    //     justify-content: left;
-    // }
 }

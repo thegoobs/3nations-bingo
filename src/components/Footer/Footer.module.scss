@@ -9,3 +9,13 @@
     min-height: 4rem;
     width: 100%;
   }
+
+  .heart {
+    color: #ffffff;
+    font-size: 1.25rem;
+    transition: color 0.15s ease-in;
+
+    &:hover {
+      color: #d83a28;
+    }
+  }
