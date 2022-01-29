@@ -1,6 +1,7 @@
 .body {
     margin: 0 5vw 5vw;
     display: flex;
+    align-items: flex-start;
     justify-content: center;
-    align-items: center;
+    height: calc(100vh - 200px);
 }

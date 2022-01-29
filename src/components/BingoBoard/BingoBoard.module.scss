@@ -9,7 +9,7 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     justify-items: stretch;
-    gap: 3vw;
+    gap: min(36px, 3vw);
 }
 
 .bingoElements {
@@ -17,5 +17,5 @@
     grid-template-rows: repeat(5, minmax(0, 1fr));
     justify-items: stretch;
     grid-auto-flow: column;
-    gap: 3vw;
+    gap: min(36px, 3vw);
 }
