@@ -1,13 +1,25 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
+import { getPersistedData, setPersistedData } from '../../persistence';
 
 export const GameContext = createContext(null);
 export const GameProvider = props => {
-    const [boards, setBoards] = useState([
+    const [boards, setBoards] = useState(getPersistedData('boards') || [
         [createBingoRow(1, 15), createBingoRow(16, 30), createBingoRow(31, 45, true), createBingoRow(46, 60), createBingoRow(61, 75)],
         [createBingoRow(1, 15), createBingoRow(16, 30), createBingoRow(31, 45, true), createBingoRow(46, 60), createBingoRow(61, 75)],
         [createBingoRow(1, 15), createBingoRow(16, 30), createBingoRow(31, 45, true), createBingoRow(46, 60), createBingoRow(61, 75)]
     ]);
-    const [blackout, setBlackout] = useState(false);
+    const [blackout, setBlackout] = useState(getPersistedData('blackout')?.isBlackout);
+
+    useEffect(() => {
+        setPersistedData('boards', boards);
+    }, [boards]);
+
+    useEffect(() => {
+        setPersistedData('blackout', { isBlackout: blackout });
+    }, [blackout]);
+
+    console.log(boards);
+    console.log('blackout', blackout);
 
     return (<GameContext.Provider value={{ boards, getBoard, resetBoards, toggleSelected, isBlackout, toggleBlackout }}>{props.children}</GameContext.Provider>)
 
