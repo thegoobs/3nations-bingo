@@ -5,7 +5,7 @@ import { BingoSquare } from './BingoSquare/BingoSquare';
 
 
 export const BingoBoard = ({ boardIndex = 0, first, last, showLabel = false }) => {
-    const { getBoard, selectSquare } = useContext(GameContext);
+    const { getBoard, toggleSelected } = useContext(GameContext);
     const classNames = [
         first && styles.first,
         last && styles.last,
@@ -31,7 +31,7 @@ export const BingoBoard = ({ boardIndex = 0, first, last, showLabel = false }) =
     );
 
     function handleClick(boardIndex, column, row) {
-        selectSquare(boardIndex, column, row);
+        toggleSelected(boardIndex, column, row);
     }
 
     function getBingoSquareProps(columnIndex, rowIndex, square) {
