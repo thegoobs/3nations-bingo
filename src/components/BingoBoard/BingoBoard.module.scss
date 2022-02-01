@@ -3,9 +3,11 @@
     width: 100%;
     max-width: 800px;
     padding: 0 min(36px, 3vw);
+    padding-bottom: min(72px, 8vw);
 
     & hr {
-        margin: min(72px, 8vw) 0;
+        margin: 0;
+        margin-bottom: min(72px, 8vw);
         border: 2px solid #FFFFFF;
     }
 }
@@ -22,6 +24,7 @@
     grid-template-columns: repeat(5, 1fr);
     justify-items: stretch;
     gap: min(36px, 3vw);
+    margin-bottom: min(48px, 4vw);
 }
 
 .bingoElements {
