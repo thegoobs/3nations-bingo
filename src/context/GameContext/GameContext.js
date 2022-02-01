@@ -8,7 +8,7 @@ export const GameProvider = props => {
         [createBingoRow(1, 9), createBingoRow(16, 30), createBingoRow(31, 45, true), createBingoRow(46, 60), createBingoRow(61, 75)]
     ]);
 
-    return (<GameContext.Provider value={{ boards, getBoard, resetBoards }}>{props.children}</GameContext.Provider>)
+    return (<GameContext.Provider value={{ boards, getBoard, resetBoards, selectSquare }}>{props.children}</GameContext.Provider>)
 
     function getBoard(index = 0) {
         return boards[index];
@@ -23,22 +23,32 @@ export const GameProvider = props => {
     }
     
     function createBingoRow(min, max, freeSpace = false) {
-        const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
+        const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min).toString();
         let row = [];
+        let rowValues = [];
     
-        while (row.length < 5) {
+        while (rowValues.length < 5) {
             let nextValue = getRandomNumber(min, max);
     
-            while (row.includes(nextValue)) {
+            while (rowValues.includes(nextValue)) {
                 nextValue = getRandomNumber(min, max);
             }
     
-            row.push(nextValue);
+            rowValues.push(nextValue);
         }
     
         if (freeSpace) {
-            row[2] = 'free';
+            rowValues[2] = 'free';
         }
-        return row;
+
+        return rowValues.map(value => ({ value, selected: false }));
+    }
+
+    function selectSquare(boardIndex, columnIndex, rowIndex) {
+        const newBoards = boards.slice();
+        newBoards[boardIndex][columnIndex][rowIndex].selected = !newBoards[boardIndex][columnIndex][rowIndex].selected;
+
+        console.log(newBoards);
+        setBoards(newBoards);
     }
 };

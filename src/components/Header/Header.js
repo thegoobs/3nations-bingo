@@ -1,8 +1,11 @@
+import { useContext } from 'react';
+import { GameContext } from '../../context';
 import styles from './Header.module.scss';
 import { Logo } from './Logo/Logo';
-import { RoundLabel } from './RoundLabel/RoundLabel';
 
 export const Header = ({ isBlackout = false, setIsBlackout }) => {
+    const { resetBoards } = useContext(GameContext);
+
     return (
         <div className={styles.header}>
             <div className={styles.left}>
@@ -19,5 +22,6 @@ export const Header = ({ isBlackout = false, setIsBlackout }) => {
 
     function handleModeChange(setToBlackout) {
         setIsBlackout && setIsBlackout(setToBlackout);
+        resetBoards();
     }
 };

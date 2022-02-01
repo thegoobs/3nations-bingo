@@ -5,24 +5,20 @@ import { GameContext } from './context';
 
 export const App = () => {
     const [isBlackout, setIsBlackout] = useState(false);
-    const {getBoard, resetBoards} = useContext(GameContext);
+    const { resetBoards } = useContext(GameContext);
     
     return (
         <div className={styles.App}>
             <Header isBlackout={isBlackout} setIsBlackout={setIsBlackout}/>
             <Body>
-                <BingoBoard board={getBoard(0)} showLabel={true} first last={isBlackout} />
+                <BingoBoard boardIndex={0} showLabel={true} first last={isBlackout} />
                 {!isBlackout && <>
-                    <BingoBoard board={getBoard(1)} />
-                    <BingoBoard board={getBoard(2)} last />
+                    <BingoBoard boardIndex={1} />
+                    <BingoBoard boardIndex={2} last />
                 </>}
-                <ClearBoard onClick={handleClearBoard}/>
+                <ClearBoard onClick={resetBoards}/>
             </Body>
             <Footer />
         </div>
     );
-
-    function handleClearBoard(event) {
-        resetBoards();
-    }
 }

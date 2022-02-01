@@ -1,8 +1,6 @@
-import { useState }from 'react';
 import styles from './BingoSquare.module.scss';
 
-export const BingoSquare = ({label = false, freeSpace = false, children}) => {
-    const [selected, setSelected] = useState(false);
+export const BingoSquare = ({label = false, onClick, freeSpace = false, selected, children}) => {
     const classNames = [
         styles.bingoSquare,
         label && styles.label,
@@ -12,13 +10,7 @@ export const BingoSquare = ({label = false, freeSpace = false, children}) => {
     let value = `${children}`.toUpperCase();
 
     return (
-    <div className={classNames} onClick={handleClick}>
+    <div className={classNames} onClick={() => onClick && onClick()}>
         <span className={styles.content}>{value}</span>
     </div>);
-
-    function handleClick() {
-        if (!label) {
-            setSelected(!selected);
-        }
-    }
 };

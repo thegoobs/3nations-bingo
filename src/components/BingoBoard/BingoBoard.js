@@ -1,8 +1,11 @@
+import { useContext } from 'react';
+import { GameContext } from '../../context';
 import styles from './BingoBoard.module.scss';
 import { BingoSquare } from './BingoSquare/BingoSquare';
 
 
-export const BingoBoard = ({ board, first, last, showLabel = false }) => {
+export const BingoBoard = ({ boardIndex = 0, first, last, showLabel = false }) => {
+    const { getBoard, selectSquare } = useContext(GameContext);
     const classNames = [
         first && styles.first,
         last && styles.last,
@@ -20,10 +23,23 @@ export const BingoBoard = ({ board, first, last, showLabel = false }) => {
             </>}
             <hr />
             <div className={styles.bingoElements}>
-                {board.map(column => column.map(row => (
-                    <BingoSquare freeSpace={row === 'free'}>{row}</BingoSquare>
-                )))}
+                {getBoard(boardIndex).map((column, columnIndex) => column.map((square, rowIndex) => {
+                    return <BingoSquare {...getBingoSquareProps(columnIndex, rowIndex, square)}>{square.value}</BingoSquare>
+                }))}
             </div>
         </div>
     );
+
+    function handleClick(boardIndex, column, row) {
+        selectSquare(boardIndex, column, row);
+    }
+
+    function getBingoSquareProps(columnIndex, rowIndex, square) {
+        return {
+            selected: square.selected,
+            key: `${boardIndex}-${columnIndex}-${rowIndex}`,
+            onClick: () => handleClick(boardIndex, columnIndex, rowIndex),
+            freeSpace: square.value === 'free'
+        }
+    }
 };
