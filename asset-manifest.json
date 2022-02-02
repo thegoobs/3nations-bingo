@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/3nations-bingo/static/css/main.28667c68.css",
-    "main.js": "/3nations-bingo/static/js/main.15c337d9.js",
+    "main.js": "/3nations-bingo/static/js/main.60b09ca1.js",
     "index.html": "/3nations-bingo/index.html",
     "main.28667c68.css.map": "/3nations-bingo/static/css/main.28667c68.css.map",
-    "main.15c337d9.js.map": "/3nations-bingo/static/js/main.15c337d9.js.map"
+    "main.60b09ca1.js.map": "/3nations-bingo/static/js/main.60b09ca1.js.map"
   },
   "entrypoints": [
     "static/css/main.28667c68.css",
-    "static/js/main.15c337d9.js"
+    "static/js/main.60b09ca1.js"
   ]
 }
