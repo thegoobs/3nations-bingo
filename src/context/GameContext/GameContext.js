@@ -18,9 +18,6 @@ export const GameProvider = props => {
         setPersistedData('blackout', { isBlackout: blackout });
     }, [blackout]);
 
-    console.log(boards);
-    console.log('blackout', blackout);
-
     return (<GameContext.Provider value={{ boards, getBoard, resetBoards, toggleSelected, isBlackout, toggleBlackout }}>{props.children}</GameContext.Provider>)
 
     function getBoard(index = 0) {
@@ -68,7 +65,6 @@ export const GameProvider = props => {
     }
 
     function toggleBlackout() {
-        console.log('toggling');
         setBlackout(!!!blackout);
     }
 };

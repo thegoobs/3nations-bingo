@@ -2,6 +2,9 @@
 
 .bingoSquare {
     background-color: white;
+    -webkit-transition: background-color 0.075s ease-in, color 0.075s ease-in;
+    -moz-transition: background-color 0.075s ease-in, color 0.075s ease-in;
+    -o-transition: background-color 0.075s ease-in, color 0.075s ease-in;
     transition: background-color 0.075s ease-in, color 0.075s ease-in;
     user-select: none;
     font-size: min(64px, 10vw);
