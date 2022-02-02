@@ -1,9 +1,9 @@
 {
-    "name": "3 Nation's Bingo",
+    "name": "3 Nations Bingo",
     "short_name": "3N Bingo",
     "icons": [
         {
-            "src": "/android-chrome-144x144.png",
+            "src": "%PUBLIC_URL%/android-chrome-144x144.png",
             "sizes": "144x144",
             "type": "image/png"
         }
