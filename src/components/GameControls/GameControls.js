@@ -8,7 +8,7 @@ export const GameControls = () => {
     return (
         <div className={styles.gameControls}>
             <button onClick={handleResetClick} className={styles.gameReset}>New Game</button>
-            <button onClick={handleBlackoutClick} className={styles.gameReset}>{isBlackout() ? 'Blackout' : '3 Boards'}</button>
+            <button onClick={handleBlackoutClick} className={styles.gameReset}>{isBlackout() ? 'Standard' : 'Blackout'}</button>
         </div>
     );
 

@@ -9,13 +9,12 @@
 
     & button {
         border: none;
-        padding: 24px;
-        margin: 24px;
+        padding: 18px;
+        margin: 24px 12px;
         font-size: min(1.25rem, 4vw);
         font-weight: bold;
         background-color: #fba900;
         box-shadow: boxShadow(0, 5, black);
         line-height: 1rem;
-        max-width: 50vw;
     }
 }
