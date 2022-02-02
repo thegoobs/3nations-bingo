@@ -36,7 +36,7 @@ export const GameProvider = props => {
     }
     
     function createBingoRow(min, max, freeSpace = false) {
-        const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min).toString();
+        const getRandomNumber = (min, max) => Math.round(Math.random() * (max - min) + min).toString();
         let rowValues = [];
     
         while (rowValues.length < 5) {
