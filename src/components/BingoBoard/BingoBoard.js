@@ -1,26 +1,18 @@
 import { useContext } from 'react';
 import { GameContext } from '../../context';
 import styles from './BingoBoard.module.scss';
-import { BingoSquare } from './BingoSquare/BingoSquare';
+import { BingoSquare } from '../BingoSquare/BingoSquare';
 
 
-export const BingoBoard = ({ boardIndex = 0, first, last, showLabel = false }) => {
+export const BingoBoard = ({ boardIndex = 0, first }) => {
     const { getBoard, toggleSelected } = useContext(GameContext);
     const classNames = [
         first && styles.first,
-        last && styles.last,
         styles.bingoBoard
     ].filter(Boolean).join(' ');
 
     return (
         <div className={classNames}>
-            {showLabel && <>
-                <div className={styles.bingoLabels}>
-                    {'BINGO'.split('').map(column => (
-                        <BingoSquare label={true}>{column}</BingoSquare>
-                    ))}
-                </div>
-            </>}
             <hr />
             <div className={styles.bingoElements}>
                 {getBoard(boardIndex).map((column, columnIndex) => column.map((square, rowIndex) => {

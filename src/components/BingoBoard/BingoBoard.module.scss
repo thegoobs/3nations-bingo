@@ -3,33 +3,22 @@
     width: 100%;
     max-width: 800px;
     padding: 0 min(36px, 3vw);
-    padding-bottom: min(72px, 8vw);
+    padding-bottom: min(36px, 3vw);
 
     & hr {
         margin: 0;
-        margin-bottom: min(72px, 8vw);
-        border: 2px solid #FFFFFF;
+        margin-bottom: min(36px, 3vw);
+        padding: min(2px, 0.25vw) 0;
+        background-color: white;
     }
 }
 .first {
-    padding-top: min(36px, 3vw);
-}
-
-.last {
-    padding-bottom: min(36px, 3vw);
-}
-
-.bingoLabels {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    justify-items: stretch;
-    gap: min(36px, 3vw);
-    margin-bottom: min(48px, 4vw);
+    padding-top: 0;
 }
 
 .bingoElements {
     display: grid;
-    grid-template-rows: repeat(5, minmax(0, 1fr));
+    grid-template-rows: repeat(5, 1fr);
     justify-items: stretch;
     grid-auto-flow: column;
     gap: min(36px, 3vw);

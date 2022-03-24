@@ -1,7 +1,7 @@
+import { BingoBoard, BingoTitle, Body, Footer, GameControls, Header } from './components';
+import { GameContext } from './context';
 import { useContext } from 'react';
 import styles from './App.module.scss';
-import { Header, Footer, BingoBoard, Body, GameControls } from './components';
-import { GameContext } from './context';
 
 export const App = () => {
     const { isBlackout } = useContext(GameContext);
@@ -10,10 +10,11 @@ export const App = () => {
         <div className={styles.App}>
             <Header isBlackout={isBlackout()} setIsBlackout={() => {}}/>
             <Body>
-                <BingoBoard boardIndex={0} showLabel={true} first last={isBlackout()} />
+                <BingoTitle />
+                <BingoBoard boardIndex={0} showLabel={true} first />
                 {!isBlackout() && <>
                     <BingoBoard boardIndex={1} />
-                    <BingoBoard boardIndex={2} last />
+                    <BingoBoard boardIndex={2} />
                 </>}
                 <GameControls />
             </Body>

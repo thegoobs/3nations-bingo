@@ -1,0 +1,14 @@
+.BingoTitle {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: stretch;
+    gap: min(36px, 3vw);
+    position: sticky;
+    top: 0;
+    background-color: black;
+    
+    z-index: 1;
+    width: 100%;
+    max-width: 800px;
+    padding: min(24px, 2vw) min(36px, 3vw);
+}
