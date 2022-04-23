@@ -2,6 +2,7 @@
   "name": "3nations-bingo",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://3nations.bingo",
   "scripts": {
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
